@@ -1,13 +1,14 @@
 {
-  "homepage": "https://raimonkoudsi.github.io/platzi-shop/",
   "name": "koudsi-shop",
   "version": "1.0.0",
   "description": "ecommerce de react",
-  "main": "src/index.jsx",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "react",
@@ -23,7 +24,6 @@
     "@babel/preset-react": "^7.16.0",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
-    "gh-pages": "^3.2.3",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "react": "^17.0.2",
@@ -36,11 +36,12 @@
   "devDependencies": {
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
     "svg-url-loader": "^7.1.1"
-  }
-
+  },
+  "homepage": "https://raimonkoudsi.github.io/platzi-shop/"
 }

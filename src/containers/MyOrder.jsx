@@ -10,11 +10,13 @@ import AppContext from '@context/AppContext';
 //components
 import OrderItem from '@components/OrderItem';
 
-const MyOrder = () => {
+const MyOrder = ({ handleToggleOrders }) => {
 
 	const { 
 		state:{cart} 
 	} = useContext(AppContext);
+
+	
 
 	//suma de precios a totales
 	const sumTotal = () => {
@@ -26,8 +28,8 @@ const MyOrder = () => {
 	return (
 		<aside className="my-order">
 			<div className="title-container">
-				<img src={flechaIcon} alt="arrow" />
-				<p className="title">My order</p>
+				<img src={flechaIcon} alt="arrow" onClick={handleToggleOrders} />
+				<p className="title-order">My order</p>
 			</div>
 			<div className="my-order-content">
 				{cart.map(item => (

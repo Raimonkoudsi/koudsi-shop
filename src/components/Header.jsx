@@ -6,19 +6,22 @@ import menuIcon from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import shoppingCartIcon from '@icons/icon_shopping_cart.svg';
 
+//context
+import AppContext from '@context/AppContext';
+
+//containers
+import MyOrder from '@containers/MyOrder';
 
 //components
 import Menu from '@components/Menu';
-import MyOrder from '@containers/MyOrder';
-
-//context
-import AppContext from '@context/AppContext';
+import MobileMenu from '@components/MobileMenu';
 
 
 const Header = () => {
 
     const [toggle, setToggle] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
+    const [ toggleMobile, setToggleMobile ] = useState(false);
 
     const {
         state:{cart}
@@ -28,9 +31,23 @@ const Header = () => {
         setToggle(!toggle);
     }
 
+    const handleToggleMobile = () => {
+		setToggleMobile(!toggleMobile);
+	}
+
+    const handleToggleOrders = () => {
+        setToggleOrders(!toggleOrders);
+    }
+
     return (
         <nav>
-            <img src={menuIcon} alt="menu" className="menu" />
+            <img 
+                src={menuIcon} 
+                alt="menu" 
+                className="menu" 
+                onClick={handleToggleMobile}
+            />
+            
             <div className="navbar-left">
                 <img src={logo} alt="logo" className="nav-logo" />
                 <ul>
@@ -64,7 +81,7 @@ const Header = () => {
                     </li>
                     <li 
                         className="navbar-shopping-cart" 
-                        onClick={() => setToggleOrders(!toggleOrders)}
+                        onClick={handleToggleOrders}
                     >
                         <img src={shoppingCartIcon} alt="shopping cart" />
                         {cart.length > 0 ? <div>{cart.length}</div> : null}
@@ -72,7 +89,8 @@ const Header = () => {
                 </ul>
             </div>
             {toggle && <Menu />}
-            {toggleOrders && <MyOrder />}
+            {toggleMobile && <MobileMenu/>}
+            {toggleOrders && <MyOrder handleToggleOrders={handleToggleOrders} />}
         </nav>
     );
 }

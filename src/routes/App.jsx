@@ -33,15 +33,15 @@ const App = () => {
 			<BrowserRouter basename="/koudsi-shop">
 				<Layout>
 					<Routes>
-						<Route exact path="/" element={<Home />} />
-						<Route exact path="/login" element={<Login />} />
-						<Route exact path="/password-recovery" element={<RecoveryPassword />} />
-						<Route exact path="/send-email" element={<SendEmail />} />
-						<Route exact path="/new-password" element={<NewPassword />} />
-						<Route exact path="/account" element={<MyAccount />} />
-						<Route exact path="/signup" element={<CreateAccount />} />
-						<Route exact path="/checkout" element={<Checkout />} />
-						<Route exact path="/orders" element={<Orders />} />
+						<Route exact path="/koudsi-shop/" element={<Home />} />
+						<Route exact path="/koudsi-shop/login" element={<Login />} />
+						<Route exact path="/koudsi-shop/password-recovery" element={<RecoveryPassword />} />
+						<Route exact path="/koudsi-shop/send-email" element={<SendEmail />} />
+						<Route exact path="/koudsi-shop/new-password" element={<NewPassword />} />
+						<Route exact path="/koudsi-shop/account" element={<MyAccount />} />
+						<Route exact path="/koudsi-shop/signup" element={<CreateAccount />} />
+						<Route exact path="/koudsi-shop/checkout" element={<Checkout />} />
+						<Route exact path="/koudsi-shop/orders" element={<Orders />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</Layout>

@@ -8,8 +8,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/'
+        filename: 'koudsi-shop/bundle.js',
+        publicPath: '/koudsi-shop/'
     },
     mode: 'development',
     resolve: {
